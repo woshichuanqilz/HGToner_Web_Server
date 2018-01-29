@@ -1,0 +1,51 @@
+/* ul.list-group:after { */
+  /* clear: both; */
+  /* display: block; */
+  /* content: ""; */
+/* } */
+
+/* .list-group-item { */
+    /* float: left; */
+    /* border: 0 !important; */
+    /* margin: 0px; */
+    /* padding: 10px 0px; */
+/* } */
+
+/* a { */
+  /* display: block; */
+  /* padding: 5px; */
+  /* border: 1px solid pink; */
+/* } */
+
+
+#bs-example-navbar-collapse-1 > ul{
+  width: auto;
+}
+
+body{
+  font-family: Montserrat-Medium,"微软雅黑";
+}
+
+#news-in-toner{
+  padding-top:2em;
+}
+
+#toolkit{
+  padding-top:1.6em;
+}
+
+#navbar-brand{
+    font-family: monaco;
+    font-style: italic;
+    font-size: 19px;
+    color: cyan;
+}
+
+.nav.navbar-nav{
+  width: 20%
+}
+
+.navbar-form.navbar-right{
+  margin-left:auto;
+  margin-right:1em
+}

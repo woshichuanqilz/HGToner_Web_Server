@@ -1,10 +1,27 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from module_Server import db_process
+
+def list_to_string (src_list, is_value_list = True, sep = ','):
+    if is_value_list:
+        sql_statement = sep.join(str('\'' + x + '\'') for x in src_list)
+    else:
+        sql_statement = sep.join(str(x) for x in src_list)
+
+    return sql_statement
+
+def make_sql_update (table_name, column_list, value_list):
+    sql_statement = 'INSERT OR REPLACE INTO {} ({}) VALUES ({})'.format(table_name, list_to_string(column_list, False), list_to_string(value_list))
+    print(sql_statement)
+    return sql_statement
+
 def get_Exchange ():
     driver = webdriver.PhantomJS()
     driver.get('http://finance.sina.com.cn/money/forex/hq/USDCNY.shtml')
     usdexchange = WebDriverWait(driver, 60).until(lambda driver : driver.find_element_by_xpath('//*[@id="quoteWrap"]')).text.split()[0]
+    db_process.exec_sql(make_sql_update('miscellaneous', ['name', 'description'], ['usdcny_exchange', str(round(float(usdexchange), 3))]))
+
     driver.close()
     driver.quit()
     return usdexchange

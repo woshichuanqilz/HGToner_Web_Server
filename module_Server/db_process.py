@@ -1,10 +1,11 @@
 import pandas as pd
 import sqlite3
-def SQL_Statement_2_Dataframe (sql_statement, database_name):
+def exec_sql (sql_statement, database_name = 'database/HGTONER_Data.db'):
     conn = sqlite3.connect(database_name)
 # 创建一个Cursor:
-    df = pd.read_sql_query(sql_statement, conn)
+    conn.cursor().execute(sql_statement)
+    res_rowcount = conn.cursor().rowcount
     conn.commit()
     conn.close()
 
-    return df
+    return res_rowcount

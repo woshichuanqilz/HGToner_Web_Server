@@ -1,0 +1,4 @@
+{
+    'nav_dropdown_button_name' : '发现更多',
+    'nav_dropdown_items' : ['Action1', 'Action2'],
+}

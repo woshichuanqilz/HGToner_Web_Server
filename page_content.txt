@@ -4,13 +4,21 @@
         {
             'bk_no' : '1',
             'bk_img_url' : 'images/background/bk1.jpg',
+            'navitem' : 'Home',
         },
 
         'page2':
         {
             'bk_no' : '2',
             'bk_img_url' : 'images/background/bk2.jpg',
+            'navitem' : 'Infomation Submitting',
         },
 
+        'page3':
+        {
+            'bk_no' : '3',
+            'bk_img_url' : 'images/background/bk3.jpg',
+            'navitem' : 'Infomation Submitting',
+        },
     }
 }

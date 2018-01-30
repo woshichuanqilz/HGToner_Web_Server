@@ -19,3 +19,8 @@ header, main{
   font-family: "Meteora - DEMO";
   font-weight: bold;
 }
+
+.usdcnylink{
+  text-decoration: underline;
+  color: cyan;
+}

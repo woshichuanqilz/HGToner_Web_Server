@@ -24,3 +24,12 @@ header, main{
   text-decoration: underline;
   color: cyan;
 }
+
+.container{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#lineChart{
+    margin-top: 20px;
+}

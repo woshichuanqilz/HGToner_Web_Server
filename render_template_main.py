@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import _thread
+import webbrowser
 import ast
 from flask import Flask, render_template, request, jsonify, url_for, redirect
 from fuzzyfinder import fuzzyfinder
@@ -35,13 +37,18 @@ ALLOWED_EXTENSIONS = set(['xls', 'xlsm', 'xlsx'])
 
 img_list = []
 
-page_title = '客服中心'
+page_title = 'Sales Dept'
 html_template_path = 'index_template.html'
 Navbar_title = 'HGToner Sales Dept'
-navbaritems = ['主页', '信息提交', '信息查询', '表格处理']
+# navbaritems = ['主页', '信息提交', '信息查询', '表格处理']
+navbaritems = ['Home', 'Info Submit', 'Info Enquiry', 'Table Process']
+
+def open_browser (url):
+    webbrowser.open_new_tab(url)
+    # os.system('start ' + url)
 
 # information init
-with open('page_content.txt') as the_file:
+with open('page_content.txt', encoding='utf-8', errors='ignore') as the_file:
     page_content_dict = ast.literal_eval(the_file.read())
 
 with open('miscellaneous.txt', encoding='utf-8', errors='ignore') as the_file:
@@ -49,9 +56,11 @@ with open('miscellaneous.txt', encoding='utf-8', errors='ignore') as the_file:
 
 @app.route('/')
 def index():
-    print(page_content_dict['page_content'])
     return render_template(html_template_path, page_content = page_content_dict['page_content'], navbaritems = navbaritems, Navbar_title = Navbar_title, navdropdown = miscellaneous['nav_dropdown_items'], nav_dropdown_button_name = miscellaneous['nav_dropdown_button_name'], page_title = page_title)
 
 if __name__ == "__main__":
     # app.run(host = '192.168.0.72', debug = True)
-    app.run(debug = True)
+    host = '127.0.0.1'
+    port = 5000
+    _thread.start_new_thread( open_browser, ('http://' + host + ':' + str(port), ) )
+    app.run(debug = True, host = host, port = port)

@@ -20,5 +20,12 @@
             'bk_img_url' : 'images/background/bk3.jpg',
             'navitem' : 'Infomation Submitting',
         },
+
+        'page4':
+        {
+            'bk_no' : '4',
+            'bk_img_url' : 'images/background/bk3.jpg',
+            'navitem' : 'Infomation Submitting',
+        },
     }
 }

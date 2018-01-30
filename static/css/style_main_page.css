@@ -6,7 +6,12 @@ html, body {
              padding: 0;
 
          }
-header, main{
+
+/* body{
+  margin-top: 3em;
+} */
+
+main{
   height: 100%;
 }
 

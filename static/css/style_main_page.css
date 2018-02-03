@@ -38,3 +38,6 @@ main{
 #lineChart{
     margin-top: 20px;
 }
+
+
+new WOW().init();

@@ -1,0 +1,44 @@
+{
+ 'tab_items' : {
+        'form1' : {
+                        'active': 'in active',
+                        'tab_id': 'excel_getsum',
+                        'items':
+                        {
+                            'item1':{
+                                'input_label' :  '分类条目', 
+                                'input_type'  :  'text', 
+                                'input_id'    :  'classifyitem', 
+                                'placeholder' :  '比如: 客户, 型号', 
+                                },
+                            'item2':{
+                                'input_label' :  '求和条目', 
+                                'input_type'  :  'text', 
+                                'input_id'    :  'sumitem', 
+                                'placeholder' :  '比如: 重量', 
+                                },
+                            'item3':{
+                                'input_label' :  '文件上传', 
+                                'input_type'  :  'file', 
+                                'input_id'    :  'excel_sum_file', 
+                                'placeholder' :  '',
+                                },
+                        }
+                  },
+
+        'form2' : {
+                        'active': '',
+                        'tab_id': 'new_client',
+                        'items':
+                        {
+                            'item7':{
+                                'input_label' :  '文件上传',
+                                'input_type'  :  'file',
+                                'input_id'    :  'new_client_file',
+                                'placeholder' :  '比如: 2018.1.1查询到的客户.xlsx',
+                                },
+
+                        }
+                  }
+        }   
+}

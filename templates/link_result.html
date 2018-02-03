@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+.result_link{
+	align: center;
+}
+
+</style>
+<head>
+	<meta charset="utf-8">
+	<title>{{ title | safe }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS Style -->
+	<link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+
+	<!-- JavaScript Script -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/customlayout.css') }}">
+</head>
+
+<body>
+		<a class="result_link" href="{{ result_link | safe }}">点击下载文件</a>
+</body>
+
+</html>

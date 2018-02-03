@@ -5,6 +5,7 @@
             'bk_no' : '1',
             'bk_img_url' : 'images/background/bk1.jpg',
             'navitem' : 'Home',
+            'template_file' : 'http://www.baidu.com',
         },
 
         'page2':
@@ -12,6 +13,7 @@
             'bk_no' : '2',
             'bk_img_url' : 'images/background/bk2.jpg',
             'navitem' : 'Infomation Submitting',
+            'template_file' : 'http://www.baidu.com',
         },
 
         'page3':
@@ -19,6 +21,7 @@
             'bk_no' : '3',
             'bk_img_url' : 'images/background/bk3.jpg',
             'navitem' : 'Infomation Submitting',
+            'template_file' : 'http://www.baidu.com',
         },
 
         'page4':
@@ -26,6 +29,7 @@
             'bk_no' : '4',
             'bk_img_url' : 'images/background/bk3.jpg',
             'navitem' : 'Infomation Submitting',
+            'template_file' : 'http://www.baidu.com',
         },
     }
 }

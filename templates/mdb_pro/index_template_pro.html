@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+{% for key, value in page_content.items() %}
+   .view.page{{ value.bk_no | safe }}{
+       background: url("{{ url_for('static', filename = value.bk_img_url ) }}")no-repeat center center;
+       background-size: cover;
+       height: 100%;
+   }
+{% endfor %}
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ page_title | safe }}</title>
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/mdb.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style_main_page.css') }}"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'images/favicon.ico') }}"/>
+</head>
+
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-indigo">
+        <a class="navbar-brand" href="#"><strong>{{ Navbar_title | safe }}</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            {% for navitem in navbaritems %}
+              <li class="nav-item">
+                  <a class="nav-link ml-4" href="#{{ navitem | safe }}">{{ navitem | safe }}</a>
+              </li>
+            {% endfor %}
+              <li class="nav-item btn-group">
+                  <a class="nav-link dropdown-toggle ml-3" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">{{ nav_dropdown_button_name | safe }}
+                  </a>
+                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    {% for navdropdownitem in navdropdown %}
+                        <a class="dropdown-item" href="#{{ navdropdownitem | safe }}">{{ navdropdownitem | safe }}</a>
+                    {% endfor %}
+                  </div>
+              </li>
+          </ul>
+        </div>
+    </nav>
+</header>
+<body>
+    <!-- Start your project here-->
+    <!--Main Navigation-->
+
+        <div class="view hm-black-light page1">
+            <div class="full-bg-img flex-center">
+                <div class="container white-text">
+                    <div class="white-text wow fadeInUp text-center ">
+                        <h1 class="animated {{ mdb_cfg_dict['in_animation'] | random }}">Sales Dept. Information Management System</h1>
+                        <h5 class="animated {{ mdb_cfg_dict['in_animation'] | random }}"><em>Be Better Self</em></h5>
+                        <br>
+                        <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
+                    </div>
+
+                    <div class="row first">
+                      <div class="col">
+                        One of three columns
+                      </div>
+                      <div class="col">
+                        One of three columns
+                      </div>
+                      <div class="col animated {{ mdb_cfg_dict['in_animation'] | random }}">
+                        <span class="bigmark view hm-zoom">6.3</span><a class="usdcnylink" href="http://finance.sina.com.cn/money/forex/hq/USDCNY.shtml"><small>USDCNY Exchange Rate</small></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--Main Navigation-->
+    <!--Main Layout-->
+    <main>
+        <!--Main layout-->
+        <div class="view hm-black-light page2">
+            <div class="full-bg-img flex-center">
+                <div class="container text-top white-text">
+                    <div class="white-text wow fadeInUp">
+                        <h2>This is page 2</h2>
+                        <h5>It will always stay visible on the top, even when you scroll down</h5>
+                        <br>
+                        <div class="container">
+                            <!--/.Page heading-->
+                            <div class="row mt-5">
+                                <!--Card-->
+                                <!-- <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(145).jpg" class="wow fadeInUp"> -->
+                                {% for key, value in card_items.items() %}
+                                  <!-- <div class="col-lg-4 wow {{ mdb_cfg_dict['in_animation'] | random }}"> -->
+                                  <div class="col-lg-4 wow animated {{ mdb_cfg_dict['in_animation'] | random }}">
+                                    <div class="card hoverable view hm-zoom">
+                                        <!--Card image-->
+                                        <a href="{{ value['card_link_url'] | safe }}">
+                                        <img class="img-fluid wow fadeInUp" src="{{ value['card_img_url'] | safe }}" alt="value['card_tooltip']">
+                                        </a>
+                                        <!--Card content-->
+                                        <div class="card-body">
+                                            <!--Title-->
+                                            <h4 class="card-title dark-grey-text">
+                                                <strong>{{ value['card_title'] | safe }}</strong>
+                                            </h4>
+                                            <h6 class="blue-text font-small font-bold">
+                                                <strong>{{ value['card_subtitle'] | safe }}</strong>
+                                            </h6>
+                                            <!--Text-->
+                                            <p class="card-text">{{ value['card_description'] | safe }}</p>
+                                            <a href="#" class="btn btn-primary btn-md">Button</a>
+                                        </div>
+                                    </div>
+                                  </div>
+                                {% endfor %}
+                                <!--/.Card-->
+                              </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <div class="view hm-black-light page3">
+            <div class="full-bg-img flex-center">
+                <div class="container text-top white-text">
+                  <form class="form-inline">
+                      <div class="md-form form-group">
+                          <i class="fa fa-envelope prefix"></i>
+                          <input type="email" id="form91" class="form-control validate">
+                          <label for="form91" data-error="wrong" data-success="right">Type your email</label>
+                      </div>
+
+                      <div class="md-form form-group">
+                          <i class="fa fa-lock prefix"></i>
+                          <input type="password" id="form92" class="form-control validate">
+                          <label for="form92" data-error="wrong" data-success="right">Type your password</label>
+                      </div>
+
+                      <div class="md-form form-group">
+                          <a class="btn btn-primary btn-lg">Login</a>
+                      </div>
+
+                  </form>
+
+                    <table class="table table-striped table-responsive w-auto">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Country</th>
+                            <th>City</th>
+                            <th>Position</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-info">
+                            <th scope="row">1</th>
+                            <td>Kate</td>
+                            <td>Moss</td>
+                            <td>USA</td>
+                            <td>New York City</td>
+                            <td>Web Designer</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Anna</td>
+                            <td>Wintour</td>
+                            <td>United Kingdom</td>
+                            <td>London</td>
+                            <td>Frontend Developer</td>
+                            <td>36</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+          </div>
+      </div>
+
+      <div class="view hm-black-light page4">
+        <div class="full-bg-img flex-center">
+          <!--Section: Features v.3-->
+          <section>
+
+              <!--Section heading-->
+              <h1 class="py-5 font-bold text-center">Why is it so great?</h1>
+              <!--Section description-->
+              <p class="px-5 mb-5 pb-3 lead grey-text text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam.</p>
+
+              <!--Grid row-->
+              <div class="row pt-2">
+
+              <!--Grid column-->
+              <div class="col-lg-5 mb-r center-on-small-only">
+                  <img src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="" class="img-fluid z-depth-0">
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-7">
+
+                  <!--Grid row-->
+                  <div class="row pb-3">
+                  <div class="col-2 col-md-1">
+                      <i class="fa fa-mail-forward fa-lg indigo-text"></i>
+                  </div>
+                  <div class="col-10">
+                      <h5 class="font-bold text-left mb-3 dark-grey-text">Safety</h5>
+                      <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
+                      deleniti hic.</p>
+                  </div>
+                  </div>
+                  <!--Grid row-->
+
+                  <!--Grid row-->
+                  <div class="row pb-3">
+                  <div class="col-2 col-md-1">
+                      <i class="fa fa-mail-forward fa-lg indigo-text"></i>
+                  </div>
+                  <div class="col-10">
+                      <h5 class="font-bold text-left mb-3 dark-grey-text">Technology</h5>
+                      <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
+                      deleniti hic.</p>
+                  </div>
+                  </div>
+                  <!--Grid row-->
+
+                  <!--Grid row-->
+                  <div class="row pb-3">
+                  <div class="col-2 col-md-1">
+                      <i class="fa fa-mail-forward fa-lg indigo-text"></i>
+                  </div>
+                  <div class="col-10">
+                      <h5 class="font-bold text-left mb-3 dark-grey-text">Finance</h5>
+                      <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
+                      deleniti hic.</p>
+                  </div>
+                  </div>
+                  <!--Grid row-->
+              </div>
+              <!--Grid column-->
+              </div>
+              <!--Grid row-->
+          </section>
+          <!--Section: Features v.3-->
+        </div>
+      </div>
+      </main>
+    <!--Main Layout-->
+    <!-- /Start your project here-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.js') }}"></script>
+</body>
+</html>

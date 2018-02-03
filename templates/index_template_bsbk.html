@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{{ title | safe }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS Style -->
+	<link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+
+	<!-- JavaScript Script -->
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/customlayout.css') }}">
+</head>
+
+<header>
+	<div class="col-md-12 column">
+		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				 </button>
+				 <a class="navbar-brand" href="#" id="navbar-brand">HGToner Sales Dept.</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						 <a href="#news-in-toner">lizhe</a>
+					</li>
+				</ul>
+
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search in this site" />
+					</div> <button type="submit" class="btn btn-default">Search</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+
+</header>
+
+
+<body>
+	<div class="container">
+	<div class="row clearfix">
+
+			<blockquote>
+				<p>
+					知人者智，知己者明; 胜人者力, 胜己者强.
+				</p> <small>老子 <cite>《道德经》</cite></small>
+			</blockquote>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+				<a class="head-anchor" id='toolkit'>
+					信息上传表格 <small><small><em>选择你需要的标签页</em></small></small>
+				</a>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<ul id="myTab" class="nav nav-tabs">
+		<li class="active">
+			<a href="#excel_sum" data-toggle="tab">
+				Excel表格求和
+			</a>
+		</li>
+		<li>
+			<a href="#new_client" data-toggle="tab">
+				新增客户
+			</a>
+		</li>
+	</ul>
+
+ <div id="myTabContent" class="tab-content">
+		 {% for key, each_tab_content in tab_items.items() %}
+				<div class="tab-pane fade {{ each_tab_content["active"] | safe }}" id="{{ each_tab_content["tab_id"] | safe }}">
+				<form role="form">
+					{% for key, each_item_content in each_tab_content["items"].items() %}
+								<div class="form-group">
+									 <label for="exampleInputEmail1">{{ each_item_content["input_label"] | safe }}</label><input type="{{ each_item_content["input_type"] | safe }}" class="form-control" id="{{ each_item_content["input_id"] | safe }}"  placeholder="{{ each_item_content["placeholder"] | safe }}"/>
+								</div>
+		 		 {% endfor %}
+				 <button type="submit" class="btn btn-primary">Submit</button>
+				 </form>
+			 </div>
+		{% endfor %}
+		</div>
+	</div>
+	</div>
+
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+{
+ 'tab_items' : {
+        'form1' : {
+                        'active': 'in active',
+                        'tab_id': 'excel_getsum',
+                        'items':
+                        {
+                            'item1':{
+                                'input_label' :  '分类条目', 
+                                'input_type'  :  'text', 
+                                'input_id'    :  'classifyitem', 
+                                'placeholder' :  '比如: 客户, 型号', 
+                                },
+                            'item2':{
+                                'input_label' :  '求和条目', 
+                                'input_type'  :  'text', 
+                                'input_id'    :  'sumitem', 
+                                'placeholder' :  '比如: 重量', 
+                                },
+                            'item3':{
+                                'input_label' :  '文件上传', 
+                                'input_type'  :  'file', 
+                                'input_id'    :  'excel_sum_file', 
+                                'placeholder' :  '',
+                                },
+                        }
+                  },
+
+        'form2' : {
+                        'active': '',
+                        'tab_id': 'new_client',
+                        'items':
+                        {
+                            <!-- 'item1':{ -->
+                                <!-- 'input_label' :  '客户名称', -->
+                                <!-- 'input_type'  :  'text', -->
+                                <!-- 'input_id'    :  'client_name', -->
+                                <!-- 'placeholder' :  '比如: VTT', -->
+                                <!-- }, -->
+
+                            <!-- 'item2':{ -->
+                                <!-- 'input_label' :  '客户电子邮箱', -->
+                                <!-- 'input_type'  :  'text', -->
+                                <!-- 'input_id'    :  'client_email', -->
+                                <!-- 'placeholder' :  '比如: maria@vtt.ru', -->
+                                <!-- }, -->
+
+                            <!-- 'item3':{ -->
+                                <!-- 'input_label' :  '客户电子邮箱', -->
+                                <!-- 'input_type'  :  'text', -->
+                                <!-- 'input_id'    :  'client_email', -->
+                                <!-- 'placeholder' :  '比如: maria@vtt.ru', -->
+                                <!-- }, -->
+
+                            <!-- 'item4':{ -->
+                                <!-- 'input_label' :  '客户国家', -->
+                                <!-- 'input_type'  :  'text', -->
+                                <!-- 'input_id'    :  'client_country', -->
+                                <!-- 'placeholder' :  '比如: 俄罗斯', -->
+                                <!-- }, -->
+
+                            <!-- 'item5':{ -->
+                                <!-- 'input_label' :  '客户经理', -->
+                                <!-- 'input_type'  :  'text', -->
+                                <!-- 'input_id'    :  'client_account_manager', -->
+                                <!-- 'placeholder' :  '比如: 李哲', -->
+                                <!-- }, -->
+
+                            <!-- 'item6':{ -->
+                                <!-- 'input_label' :  '备注', -->
+                                <!-- 'input_type'  :  'text', -->
+                                <!-- 'input_id'    :  'client_comment', -->
+                                <!-- 'placeholder' :  '比如: 每月用量40T', -->
+                                <!-- }, -->
+
+                            'item7':{
+                                'input_label' :  '文件上传',
+                                'input_type'  :  'file',
+                                'input_id'    :  'new_client_file',
+                                'placeholder' :  '比如: 2018.1.1查询到的客户.xlsx',
+                                },
+
+                        }
+                  }
+        }   
+}

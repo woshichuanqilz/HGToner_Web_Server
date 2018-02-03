@@ -1,0 +1,21 @@
+{% for key, value in card_items.items() %}
+  <div class="card hoverable view hm-zoom">
+	  <!--Card image-->
+	  <a href="{{ value['card_link_url'] | safe }}">
+	  <img class="img-fluid" src="{{ value['card_img_url'] | safe }}" alt="value['card_tooltip']">
+	  </a>
+	  <!--Card content-->
+	  <div class="card-body">
+		  <!--Title-->
+		  <h4 class="card-title dark-grey-text">
+			  <strong>{{ value['card_title'] | safe }}</strong>
+		  </h4>
+		  <h6 class="blue-text font-small font-bold">
+			  <strong>{{ value['card_subtitle'] | safe }}</strong>
+		  </h6>
+		  <!--Text-->
+		  <p class="card-text">{{ value['card_description'] | safe }}</p>
+		  <a href="#" class="btn btn-primary btn-md">Button</a>
+	  </div>
+  </div>
+{% endfor %}
